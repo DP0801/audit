@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {NgbModal, ModalDismissReasons, NgbModalOptions} from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {UserService} from './user.service';
+
 declare var $: any;
 
 @Component({
@@ -11,7 +13,12 @@ declare var $: any;
 export class AppComponent {
   title = 'audit';
   closeResult = '';
-  constructor(private modalService: NgbModal) {}
+  constructor(private modalService: NgbModal, private user: UserService) {
+
+    this.user.getData().subscribe(data => {
+      console.log(data);
+    });
+  }
 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
