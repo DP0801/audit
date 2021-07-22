@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
 @Injectable({
   providedIn: 'root'
 })
@@ -13,4 +13,16 @@ export class UserService {
       let url = 'https://jsonplaceholder.typicode.com/posts';
       return this.http.get(url);
    }
+
+   getDataById(id) {
+     let params = new HttpParams().set("id", id);
+    let url = 'https://jsonplaceholder.typicode.com/posts';
+    return this.http.get(url, {params : params});
+ }
+
+ getLoggedInUser(uesrname, password) {
+    let params = new HttpParams().set("uesrname", uesrname);
+    let url = 'https://jsonplaceholder.typicode.com/posts';
+    return this.http.get(url, {params : params});
+  }
 }

@@ -15,7 +15,7 @@ export class AppComponent {
   closeResult = '';
   constructor(private modalService: NgbModal, private user: UserService) {
 
-    this.user.getData().subscribe(data => {
+    this.user.getDataById("1").subscribe(data => {
       console.log(data);
     });
   }
