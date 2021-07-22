@@ -12,6 +12,7 @@ import { ContactusComponent } from './web/contactus/contactus.component';
 import { FooterComponent } from './web/footer/footer.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HeaderComponent } from './admin/header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     FeaturesComponent,
     AboutusComponent,
     ContactusComponent,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
