@@ -1,13 +1,75 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Audit</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  
 </head>
-<body>
+
+<body id="wrap">
   <app-root></app-root>
+
+  <a href="#home" class="back-to-top anchorLink"></a>
+  <script src="assets/js/jquery.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("a.anchorLink").anchorAnimate()
+    });
+
+    jQuery.fn.anchorAnimate = function (settings) {
+
+      settings = jQuery.extend({
+        speed: 1100
+      }, settings);
+
+      return this.each(function () {
+        var caller = this
+        $(caller).click(function (event) {
+          event.preventDefault()
+          var locationHref = window.location.href
+          var elementClick = $(caller).attr("href")
+
+          var destination = $(elementClick).offset().top;
+          $("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination }, settings.speed, function () {
+            window.location.hash = elementClick
+          });
+          return false;
+        })
+      })
+    }
+
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 100) {
+        $('.back-to-top').fadeIn();
+      } else {
+        $('.back-to-top').fadeOut();
+      }
+    });
+
+    function DisplayDiv() {
+      $(".div_forgetpass").css("display", "block");
+      return false;
+    }
+
+    function CheckValidation() {
+      var email = document.getElementById('email');
+      var re = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+      if (re.test(email.value) == '' || !re.test(email.value)) {
+        alert('Please enter a valid email address.');
+        email.focus();
+        return false;
+      }
+      else
+        return true;
+    }
+  </script>
 </body>
+
 </html>

@@ -1,0 +1,53 @@
+  
+  <div id="Login">
+    <div class="modal-inner">
+      <a href="#home" class="modal-close" (click)="closeModalDialog()"><span class="sr">CloseModelPopup</span></a>
+      <div class="modal-header">
+        <img src="assets/img/imac.png" alt="img" />
+        <span>Sing-In</span>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><img src="assets/img/profile.png" alt="" /></span>
+            <div class="icon-addon addon-lg">
+              <input type="text" placeholder="Username" class="form-control" id="username">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="input-group-addon"><img src="assets/img/tool.png" alt="" /></span>
+            <div class="icon-addon addon-lg">
+              <input type="password" placeholder="Password" class="form-control" id="password">
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="input-group">
+            <span class="forgot-pass"><a href="#" onclick="return DisplayDiv();">Forgot Password?</a></span>
+            <div class="submit-button">
+              <input type="submit" class="form-control" value="Sing-in">
+            </div>
+          </div>
+        </div>
+        <div class="div_forgetpass" style="display:none;">
+          <div class="form-group">
+            <div class="input-group">
+              <span class="input-group-addon"><img src="assets/img/mail.png" alt="" /></span>
+              <div class="icon-addon addon-lg">
+                <input type="text" placeholder="Email" class="form-control" id="email">
+              </div>
+            </div>
+          </div>
+          <div class="form-group text-center">
+            <div class="input-group">
+              <div class="submit-button1">
+                <input type="submit" class="form-control" value="Submit" onclick="Javascript:CheckValidation();">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
