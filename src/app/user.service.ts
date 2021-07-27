@@ -14,6 +14,11 @@ export class UserService {
       return this.http.get(url);
    }
 
+   getData1() {
+    let url = 'http://localhost:53801/api/User/GetAllUsers';
+    return this.http.get(url);
+ }
+
    getDataById(id) {
      let params = new HttpParams().set("id", id);
     let url = 'https://jsonplaceholder.typicode.com/posts';
